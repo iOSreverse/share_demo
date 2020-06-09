@@ -32,16 +32,16 @@
 
     //初始化
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
-        [platformsRegister setupWeChatWithAppId:@""
-                                      appSecret:@""
+        [platformsRegister setupWeChatWithAppId:@"wx01c6586fd0240a2e"
+                                      appSecret:@"b2a8f1a6a71291b505ebb46f099fc29e"
                                   universalLink:@""];
 
         [platformsRegister setupSinaWeiboWithAppkey:@""
                                           appSecret:@""
                                         redirectUrl:@""];
 
-        [platformsRegister setupQQWithAppId:@""
-                                     appkey:@""
+        [platformsRegister setupQQWithAppId:@"QQ41E35221"
+                                     appkey:@"yvCkgvEAC5J598RN"
                         enableUniversalLink:NO
                               universalLink:@""];
     }];
