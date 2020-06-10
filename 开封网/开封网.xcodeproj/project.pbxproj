@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E22A778248FE384005FA3DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E22A777248FE384005FA3DE /* AppDelegate.m */; };
-		2E22A77B248FE384005FA3DE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E22A77A248FE384005FA3DE /* SceneDelegate.m */; };
 		2E22A77E248FE384005FA3DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E22A77D248FE384005FA3DE /* ViewController.m */; };
 		2E22A781248FE384005FA3DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E22A77F248FE384005FA3DE /* Main.storyboard */; };
 		2E22A783248FE387005FA3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E22A782248FE387005FA3DE /* Assets.xcassets */; };
@@ -43,8 +42,6 @@
 		2E22A773248FE384005FA3DE /* 开封网.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "开封网.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E22A776248FE384005FA3DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2E22A777248FE384005FA3DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2E22A779248FE384005FA3DE /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		2E22A77A248FE384005FA3DE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		2E22A77C248FE384005FA3DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2E22A77D248FE384005FA3DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2E22A780248FE384005FA3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +77,7 @@
 		2E22A7C8248FE98D005FA3DE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		2E22A7CA248FE994005FA3DE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		2E22A7CC248FE9A0005FA3DE /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		2E22A7CE24910A86005FA3DE /* 开封网.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "开封网.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +130,10 @@
 		2E22A775248FE384005FA3DE /* 开封网 */ = {
 			isa = PBXGroup;
 			children = (
+				2E22A7CE24910A86005FA3DE /* 开封网.entitlements */,
 				2E22A78F248FE8FA005FA3DE /* shareSDK */,
 				2E22A776248FE384005FA3DE /* AppDelegate.h */,
 				2E22A777248FE384005FA3DE /* AppDelegate.m */,
-				2E22A779248FE384005FA3DE /* SceneDelegate.h */,
-				2E22A77A248FE384005FA3DE /* SceneDelegate.m */,
 				2E22A77C248FE384005FA3DE /* ViewController.h */,
 				2E22A77D248FE384005FA3DE /* ViewController.m */,
 				2E22A77F248FE384005FA3DE /* Main.storyboard */,
@@ -347,7 +344,6 @@
 				2E22A77E248FE384005FA3DE /* ViewController.m in Sources */,
 				2E22A778248FE384005FA3DE /* AppDelegate.m in Sources */,
 				2E22A789248FE387005FA3DE /* main.m in Sources */,
-				2E22A77B248FE384005FA3DE /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,8 +483,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "开封网/开封网.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZF44W2ZC2;
+				DEVELOPMENT_TEAM = AF3RNZPSNL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/开封网/shareSDK/ShareSDK/Support/PlatformSDK/QQSDK",
@@ -509,7 +506,7 @@
 					"$(PROJECT_DIR)/开封网/shareSDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				OTHER_LIBTOOLFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cmstop.kf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.66wz.WzCityNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -519,8 +516,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "开封网/开封网.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZF44W2ZC2;
+				DEVELOPMENT_TEAM = AF3RNZPSNL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/开封网/shareSDK/ShareSDK/Support/PlatformSDK/QQSDK",
@@ -541,7 +539,7 @@
 					"$(PROJECT_DIR)/开封网/shareSDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				OTHER_LIBTOOLFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cmstop.kf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.66wz.WzCityNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
