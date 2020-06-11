@@ -41,7 +41,7 @@
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
         [platformsRegister setupWeChatWithAppId:@"wx29ab06c527e94b41"
                                       appSecret:@"7a9ac64aa79a5b13f4a3d091cb177dbd"
-                                  universalLink:@"https://xevng.share2dlink.com/"];
+                                  universalLink:@"https://mkmat.share2dlink.com/"];
 
 //        [platformsRegister setupSinaWeiboWithAppkey:@""
 //                                          appSecret:@""

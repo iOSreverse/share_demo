@@ -34,7 +34,7 @@
 
 - (void)setupUI {
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
     self.shareBtn.frame = CGRectMake(100, 100, 50, 30);
     self.loginBtn.frame = CGRectMake(100, 300, 50, 30);
 }
@@ -43,33 +43,36 @@
 //分享
 - (void)shareBtnClick
 {
-    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params SSDKSetupShareParamsByText:@"test"
                                 images:@"http://download.sdk.mob.com/web/images/2019/07/30/14/1564468183056/750_750_65.12.png"
                                    url:[NSURL URLWithString:@"http://www.mob.com/"]
                                  title:@"title"
-                        type:SSDKContentTypeAuto];
+                                  type:SSDKContentTypeAuto];
 
     [ShareSDK showShareActionSheet:nil //(第一个参数要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，在ipad中要想弹出我们的分享菜单，这个参数必须要传值，可以传自己分享按钮的对象，或者可以创建一个小的view对象去传，传值与否不影响iphone显示)
-                     customItems:nil
-                     shareParams:params
-              sheetConfiguration:nil
-                  onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType,NSDictionary *userData,SSDKContentEntity *contentEntity,NSError *error,BOOL end)
-             {
-    switch (state) {
-                 case SSDKResponseStateSuccess:
-                         NSLog(@"成功");//成功
-                         break;
-                 case SSDKResponseStateFail:
-                    {
-                         NSLog(@"--%@",error.description);//失败
-                         break;
-                    }
-                 case SSDKResponseStateCancel:
-                 break;
-                 default:
-                 break;
-             }
+                       customItems:@[@(SSDKPlatformTypeSinaWeibo),
+                                     @(SSDKPlatformSubTypeQQFriend),
+                                     @(SSDKPlatformSubTypeWechatSession),
+                                     @(SSDKPlatformSubTypeWechatTimeline),
+                                     @(SSDKPlatformSubTypeQZone)]
+                       shareParams:params
+                sheetConfiguration:nil
+                    onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end)
+    {
+        switch (state) {
+            case SSDKResponseStateSuccess:
+                NSLog(@"成功");         //成功
+                break;
+            case SSDKResponseStateFail: {
+                NSLog(@"--%@", error.description);        //失败
+                break;
+            }
+            case SSDKResponseStateCancel:
+                break;
+            default:
+                break;
+        }
     }];
 }
 
@@ -77,27 +80,25 @@
 - (void)loginBtnClick
 {
     [ShareSDK authorize:SSDKPlatformTypeWechat
-                        settings:nil
-            onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
-               switch (state) {
-                        case SSDKResponseStateSuccess:
-                                 NSLog(@"%@",[user.credential rawData]);
-                        break;
-                        case SSDKResponseStateFail:
-                              {
-                                 NSLog(@"--%@",error.description);
-                                 //失败
-                                 break;
-                               }
-                        case SSDKResponseStateCancel:
-                                 //用户取消授权
-                                 break;
-
-                        default:
-                        break;
+               settings:nil
+         onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
+        switch (state) {
+            case SSDKResponseStateSuccess:
+                NSLog(@"%@", [user.credential rawData]);
+                break;
+            case SSDKResponseStateFail: {
+                NSLog(@"--%@", error.description);
+                //失败
+                break;
             }
+            case SSDKResponseStateCancel:
+                //用户取消授权
+                break;
+
+            default:
+                break;
+        }
     }];
-    
 }
 
 #pragma mark - 懒加载
